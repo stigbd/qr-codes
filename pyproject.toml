@@ -1,0 +1,23 @@
+[tool.poetry]
+authors = ["Stig B. Dørmænen <stigbd@gmail.com>"]
+description = ""
+name = "qr_codes"
+packages = [{include = "qr_codes"}]
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+pillow = "^9.4.0"
+python = "^3.10"
+pyzbar = "^0.1.9"
+click = "^8.1.3"
+qrcode = "^7.3.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.12.0"
+flake8 = "^6.0.0"
+mypy = "^0.991"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
