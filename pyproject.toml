@@ -15,11 +15,51 @@ qrcode = "^7.3.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.12.0"
+codecov = "^2.1.12"
+coverage = "^7.1.0"
+darglint = "^1.8.1"
 flake8 = "^6.0.0"
+flake8-annotations = "^3.0.0"
+flake8-assertive = "^2.1.0"
+flake8-bandit = "^4.1.1"
+flake8-black = "^0.3.6"
+flake8-bugbear = "^23.1.20"
+flake8-docstrings = "^1.7.0"
+flake8-import-order = "^0.18.2"
 mypy = "^0.991"
+nox = "^2022.11.21"
+nox-poetry = "^1.0.2"
+pytest = "^7.2.1"
+pytest-cov = "^4.0.0"
 
 [tool.poetry.scripts]
 qr-codes = "qr_codes.cli:cli"
+
+[tool.coverage.paths]
+source = ["qr_codes", "*/site-packages"]
+
+[tool.coverage.run]
+branch = false
+source = ["qr_codes"]
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
+
+[tool.mypy]
+pretty = true
+show_column_numbers = true
+show_error_codes = true
+show_error_context = true
+strict = false
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+ignore_missing_imports = true
+module = [
+  "pyzbar.*",
+  "qrcode.*",
+]
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
