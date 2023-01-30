@@ -15,6 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install zbar
+        run: sudo apt-get install -y libzbar0
+
       - name: Set up Python 3.10
         uses: actions/setup-python@v2
         with:
